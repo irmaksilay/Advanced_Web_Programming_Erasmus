@@ -8,7 +8,7 @@ namespace SchoolRegister.Model.DataModel
 {
     public class Grade
     {
-        public DateTime DateOFIssue { get; set; }
+        public DateTime DateOfIssue { get; set; }
         public GradeScale GradeValue { get; set; }
         public Subject Subject { get; set; }
         public int SubjectId { get; set; }
