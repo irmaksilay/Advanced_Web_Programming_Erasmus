@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SchoolRegister.Web.Data;
+using SchoolRegister.DAL.EF;
+using SchoolRegister.Model.DataModel;
+using SchoolRegister.Model.DataModels;
+//using SchoolRegister.Web.Data;  -- Kullanılmadığı için hata veriyordu ben yaptım
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +13,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<Role>()
+    .AddRoleManager<RoleManager<Role>>()
+    .AddUserManager<UserManager<User>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddTransient(typeof(ILogger), typeof(Logger<Program>));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
