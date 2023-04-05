@@ -8,13 +8,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolRegister.Model.DataModel
 {
+   
     public class SubjectGroup
     {
         public virtual Subject? Subject { get; set; }
         [ForeignKey("Subject")]
-        public int? SubjectId { get; set; }
+       
+       
+        public virtual int? SubjectId { get; set; }
         
-        public Group Group { get; set; }
+        public virtual Group Group { get; set; }
         public int GroupId { get; set; }
         SubjectGroup(){}
     }

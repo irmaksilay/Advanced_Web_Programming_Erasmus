@@ -10,12 +10,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolRegister.Model.DataModel
 {
-    public class Teacher
+    public class Teacher : User
     {
         public virtual IList<Subject> Subjects { get; set; }
         
         [Required] 
         public string Title { get; set; }
-        Teacher(){}
+        // Teacher(){}
     }
 }

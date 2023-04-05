@@ -14,11 +14,11 @@ namespace SchoolRegister.Model.DataModel
         public DateTime DateOfIssue { get; set; }
         public GradeScale GradeValue { get; set; }
         
-        public Subject? Subject { get; set; }
+        public virtual Subject? Subject { get; set; }
         [ForeignKey("Grade")]
         public int? SubjectId { get; set; }
         
-        public Student? Student { get; set; }
+        public virtual Student? Student { get; set; }
         [ForeignKey("Student")]
         public int? StudentId { get; set; }
 

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace SchoolRegister.Model.DataModels
+namespace SchoolRegister.Model.DataModel
 {
-public class User : IdentityUser<int>
-{
-public string FirstName { get; set; } = default!;
-public string LastName { get; set; } = default!;
-public DateTime RegistrationDate { get; set; }
-User(){}
-}
+    public class User : IdentityUser<int>
+    {
+        public string FirstName { get; set; } = default!;
+        public string LastName { get; set; } = default!;
+        public DateTime RegistrationDate { get; set; }
+        public User() { }
+    }
 }

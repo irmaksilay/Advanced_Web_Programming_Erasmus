@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModel
 {
-    public class Parent
+    public class Parent : User
     {
         public virtual IList<Student> Students { get; set; }
-        Parent(){}
+        //Parent(){}
     }
 }
