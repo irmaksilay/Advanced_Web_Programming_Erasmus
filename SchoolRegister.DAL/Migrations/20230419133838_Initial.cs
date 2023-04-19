@@ -94,8 +94,7 @@ namespace SchoolRegister.DAL.Migrations
                         name: "FK_AspNetUsers_AspNetUsers_ParentId",
                         column: x => x.ParentId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_AspNetUsers_Groups_GroupId",
                         column: x => x.GroupId,

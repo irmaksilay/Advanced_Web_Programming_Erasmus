@@ -39,6 +39,11 @@ modelBuilder.Entity<User>()
 .HasValue<Parent>((int)RoleValue.Parent)
 .HasValue<Teacher>((int)RoleValue.Teacher);
 
+modelBuilder.Entity<Student>()
+    .HasOne(s => s.Parent)
+    .WithMany(s => s.Students)
+    .OnDelete(DeleteBehavior.NoAction);
+
 modelBuilder.Entity<SubjectGroup>()
     .HasKey(sg => new { sg.GroupId, sg.SubjectId });
 

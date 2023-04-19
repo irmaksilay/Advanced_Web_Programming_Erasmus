@@ -12,7 +12,7 @@ using SchoolRegister.DAL.EF;
 namespace SchoolRegister.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230405140153_Initial")]
+    [Migration("20230419133838_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -472,7 +472,7 @@ namespace SchoolRegister.DAL.Migrations
                     b.HasOne("SchoolRegister.Model.DataModel.Parent", "Parent")
                         .WithMany("Students")
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Group");

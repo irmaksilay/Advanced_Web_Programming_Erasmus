@@ -470,7 +470,7 @@ namespace SchoolRegister.DAL.Migrations
                     b.HasOne("SchoolRegister.Model.DataModel.Parent", "Parent")
                         .WithMany("Students")
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Group");
